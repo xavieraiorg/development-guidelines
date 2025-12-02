@@ -1,0 +1,146 @@
+# XavierAI Organization Code Owners
+# 
+# This file defines who has review rights for different parts of the codebase.
+# Each line is a file pattern followed by one or more owners.
+# 
+# Order is important; the last matching pattern takes the most precedence.
+# When someone opens a pull request that only modifies files matching a 
+# pattern, only the owner(s) of that pattern will be requested for review.
+
+# Global fallback - these users/teams are requested if no other rules match
+* @xavieraiorg/tech-leads
+
+# Documentation
+*.md @xavieraiorg/tech-writers @xavieraiorg/tech-leads
+/docs/ @xavieraiorg/tech-writers @xavieraiorg/tech-leads
+README.md @xavieraiorg/tech-writers @xavieraiorg/tech-leads
+
+# GitHub configuration files
+/.github/ @xavieraiorg/devops @xavieraiorg/tech-leads
+
+# CI/CD and deployment
+/.github/workflows/ @xavieraiorg/devops @xavieraiorg/tech-leads
+/scripts/ @xavieraiorg/devops
+Dockerfile @xavieraiorg/devops
+docker-compose*.yml @xavieraiorg/devops
+*.dockerfile @xavieraiorg/devops
+
+# Infrastructure as Code
+/terraform/ @xavieraiorg/devops @xavieraiorg/infrastructure
+/cloudformation/ @xavieraiorg/devops @xavieraiorg/infrastructure
+/k8s/ @xavieraiorg/devops @xavieraiorg/infrastructure
+/kubernetes/ @xavieraiorg/devops @xavieraiorg/infrastructure
+
+# Security-sensitive files
+/security/ @xavieraiorg/security @xavieraiorg/tech-leads
+SECURITY.md @xavieraiorg/security @xavieraiorg/tech-leads
+.env.example @xavieraiorg/security @xavieraiorg/devops
+
+# Configuration files
+*.config.js @xavieraiorg/senior-developers @xavieraiorg/tech-leads
+*.config.ts @xavieraiorg/senior-developers @xavieraiorg/tech-leads
+*.json @xavieraiorg/senior-developers
+*.yml @xavieraiorg/senior-developers
+*.yaml @xavieraiorg/senior-developers
+
+# Package management
+package.json @xavieraiorg/senior-developers @xavieraiorg/tech-leads
+package-lock.json @xavieraiorg/senior-developers
+yarn.lock @xavieraiorg/senior-developers
+requirements.txt @xavieraiorg/senior-developers @xavieraiorg/tech-leads
+Pipfile @xavieraiorg/senior-developers
+poetry.lock @xavieraiorg/senior-developers
+Cargo.toml @xavieraiorg/senior-developers
+Cargo.lock @xavieraiorg/senior-developers
+go.mod @xavieraiorg/senior-developers
+go.sum @xavieraiorg/senior-developers
+
+# Frontend Code (adjust paths as needed)
+/src/frontend/ @xavieraiorg/frontend-team
+/src/components/ @xavieraiorg/frontend-team
+/src/pages/ @xavieraiorg/frontend-team
+/src/styles/ @xavieraiorg/frontend-team
+/public/ @xavieraiorg/frontend-team
+*.css @xavieraiorg/frontend-team
+*.scss @xavieraiorg/frontend-team
+*.less @xavieraiorg/frontend-team
+*.vue @xavieraiorg/frontend-team
+*.jsx @xavieraiorg/frontend-team
+*.tsx @xavieraiorg/frontend-team
+
+# Backend Code (adjust paths as needed)
+/src/backend/ @xavieraiorg/backend-team
+/src/api/ @xavieraiorg/backend-team
+/src/server/ @xavieraiorg/backend-team
+/src/services/ @xavieraiorg/backend-team
+/src/controllers/ @xavieraiorg/backend-team
+/src/models/ @xavieraiorg/backend-team
+/src/middleware/ @xavieraiorg/backend-team
+/src/utils/ @xavieraiorg/backend-team
+
+# Database
+/src/database/ @xavieraiorg/backend-team @xavieraiorg/database-team
+/migrations/ @xavieraiorg/backend-team @xavieraiorg/database-team
+/db/ @xavieraiorg/backend-team @xavieraiorg/database-team
+*.sql @xavieraiorg/database-team
+
+# API Documentation
+/api/ @xavieraiorg/backend-team @xavieraiorg/tech-writers
+swagger.yml @xavieraiorg/backend-team @xavieraiorg/tech-writers
+swagger.yaml @xavieraiorg/backend-team @xavieraiorg/tech-writers
+openapi.yml @xavieraiorg/backend-team @xavieraiorg/tech-writers
+openapi.yaml @xavieraiorg/backend-team @xavieraiorg/tech-writers
+
+# Testing
+/tests/ @xavieraiorg/qa-team @xavieraiorg/senior-developers
+/test/ @xavieraiorg/qa-team @xavieraiorg/senior-developers
+*.test.js @xavieraiorg/qa-team @xavieraiorg/senior-developers
+*.test.ts @xavieraiorg/qa-team @xavieraiorg/senior-developers
+*.spec.js @xavieraiorg/qa-team @xavieraiorg/senior-developers
+*.spec.ts @xavieraiorg/qa-team @xavieraiorg/senior-developers
+jest.config.js @xavieraiorg/qa-team @xavieraiorg/senior-developers
+cypress.json @xavieraiorg/qa-team @xavieraiorg/frontend-team
+
+# AI/ML specific files (if applicable)
+/models/ @xavieraiorg/ml-team @xavieraiorg/data-science
+/notebooks/ @xavieraiorg/ml-team @xavieraiorg/data-science
+*.py @xavieraiorg/ml-team @xavieraiorg/backend-team
+*.ipynb @xavieraiorg/ml-team @xavieraiorg/data-science
+requirements-ml.txt @xavieraiorg/ml-team
+
+# Mobile (if applicable)
+/mobile/ @xavieraiorg/mobile-team
+/ios/ @xavieraiorg/mobile-team
+/android/ @xavieraiorg/mobile-team
+*.swift @xavieraiorg/mobile-team
+*.kt @xavieraiorg/mobile-team
+*.java @xavieraiorg/mobile-team
+*.dart @xavieraiorg/mobile-team
+
+# Legal and compliance
+LICENSE* @xavieraiorg/legal @xavieraiorg/tech-leads
+COPYRIGHT* @xavieraiorg/legal @xavieraiorg/tech-leads
+NOTICE* @xavieraiorg/legal @xavieraiorg/tech-leads
+
+# Project management
+CHANGELOG.md @xavieraiorg/product-managers @xavieraiorg/tech-leads
+ROADMAP.md @xavieraiorg/product-managers @xavieraiorg/tech-leads
+
+# Example team assignments (adjust based on your actual GitHub teams):
+# @xavieraiorg/tech-leads - Technical leadership team
+# @xavieraiorg/senior-developers - Senior development team
+# @xavieraiorg/frontend-team - Frontend developers
+# @xavieraiorg/backend-team - Backend developers
+# @xavieraiorg/devops - DevOps and infrastructure team
+# @xavieraiorg/qa-team - Quality assurance team
+# @xavieraiorg/security - Security team
+# @xavieraiorg/ml-team - Machine learning team
+# @xavieraiorg/data-science - Data science team
+# @xavieraiorg/mobile-team - Mobile development team
+# @xavieraiorg/tech-writers - Technical writing team
+# @xavieraiorg/product-managers - Product management team
+# @xavieraiorg/database-team - Database specialists
+# @xavieraiorg/infrastructure - Infrastructure team
+# @xavieraiorg/legal - Legal and compliance team
+
+# Note: Update team names and paths according to your organization structure
